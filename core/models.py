@@ -8,6 +8,7 @@ class Evento(models.Model):
     descricao = models.TextField(verbose_name='Descrição do Evento',blank=True, null=True)
     data_evento = models.DateTimeField(verbose_name='Data do Evento')
     data_criacao = models.DateTimeField(verbose_name='Data de Criação do Evento',auto_now=True)
+    local = models.CharField(verbose_name='Local do Evento',max_length=100)
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
@@ -15,3 +16,7 @@ class Evento(models.Model):
 
     def __str__(self):
         return self.titulo
+
+    def get_data_evento(self):
+        test = self.data_evento.strftime('Dia: %d/%m/%Y às %H:%M Horas')
+        return test

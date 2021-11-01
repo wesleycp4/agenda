@@ -1,14 +1,20 @@
 {% extends "model-page.html" %}
 
 {% block content %}
-    <h2>Agendamentos</h2>
-
-    <ul style="font-size: 20px"><!-- lista todos -->
+<h2>Agendamentos</h2>
+<a href="evento/">
+    <button type="button">Novo Evento</button>
+</a>
+<ul style="font-size: 20px"><!-- lista todos -->
     {% for evento in eventos %}
-        <li>{{ evento.titulo }} - {{ evento.get_data_evento }}</li>
+    <li>{{ evento.titulo }}
+        <br>{{ evento.get_data_evento }}
+        <br>Local: {{ evento.local }}
+        <p></p>
+    </li>
     {% endfor %}
-    </ul>
-    <!--lista por id-->
-    <b>{{ evento.titulo }}  {{ evento.get_data_evento }}</b>
+</ul>
+<!-- lista por id rota desabilitada -->
+<!-- <b>{{ evento.titulo }} {{ evento.get_data_evento }}</b> -->
 
 {% endblock %}

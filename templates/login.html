@@ -6,22 +6,24 @@
 </head>
 <body>
 
-    <h1>Login</h1>
-    <form action="submit" method="post">{% csrf_token %}
-        <div align="left">
-            <label>Usuário: </label>
-            <input type="text" name="username">
+<h1>Login</h1>
+<form action="submit" method="post">{% csrf_token %}
+    <div align="left">
+        <label>Usuário: </label>
+        <input type="text" name="username">
 
-            <label>Senha: </label>
-            <input type="password" name="pw">
+        <label>Senha: </label>
+        <input type="password" name="pw">
 
-            <button type="submit">Entrar</button>
-        </div>
-    </form>
+        <button type="submit">Entrar</button>
+    </div>
+</form>
 
-    {% for message in messages %}
-        <strong>Falha no login! </strong> {{ message }}
-    {% endfor %}
+{% for message in messages %}
+<br>
+<p style="color:red"><strong>Falha no login! </strong></p>
+{{ message }}
+{% endfor %}
 
 </body>
 </html>

@@ -8,6 +8,13 @@
 <ul style="font-size: 20px"><!-- lista todos -->
     {% for evento in eventos %}
     <li>{{ evento.titulo }}
+        <font size="2">
+            (
+            <a href="evento/?id={{ evento.id }}">Editar</a>
+            |
+            <a href="evento/delete/{{ evento.id }}">Excluir</a>
+            )
+        </font>
         <br>{{ evento.get_data_evento }}
         <br>Local: {{ evento.local }}
         <p></p>

@@ -1,4 +1,4 @@
-# Projeto Simulação de Agenda
+# Projeto Simulação de Agenda / CRUD
 
 - Aplicação multiusuário com autenticação;
 - Cada usuário visualiza apenas sua agenda;
